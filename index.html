@@ -215,18 +215,19 @@
     <p class="px-12">
       El mejor regalo es compartir
       este día tan esperando con ustedes,
-      Pero si desean obsequiarnos algo, Será
-      recibido con mucho cariño en lluvia de sobres o por
-      transferencia.
+      Pero si desean obsequiarnos algo especial, Lo
+      recibiremos con el corazón agradecido, como 
+      una bendición más en nuestro camino.
     </p>
     <p> N° de cuenta </p>
     <!-- bg-[#1a2a5f] -->
     <div class="flex flex-row  justify-center items-center mb-6 mt-10">
 
-      <i class=" fa-solid relative mur  fa-wallet text-white text-center pt-4 bg-[#1a2a5f] rounded-full w-12 h-12 "></i>
+      <!-- <i class=" fa-solid relative mur  fa-wallet text-white text-center pt-4 bg-[#1a2a5f] rounded-full w-12 h-12 "></i> -->
 
-      <a class=" px-4 pl-6 text-[10px] text-bold py-[12px] text-white bg-[#1a2a5f]  text-center border   rounded-3xl"
-        href="">Click aqui</a>
+      <!-- <a class=" px-4 pl-6 text-[10px] text-bold py-[12px] text-white bg-[#1a2a5f]  text-center border   rounded-3xl"
+        href="">Click aqui</a> -->
+        <button class="enviarRegalo">Enviar Regalo</button>
 
     </div>
 
@@ -547,6 +548,39 @@ const formdos = document.getElementById("formulariodos");
       mostrarDos.querySelector(".next").onclick = () => { j = (j + 1) % total; show(j); };
       setInterval(() => { j = (j + 1) % total; show(j); }, 5000);
     });
+
+  const enviarRegalo = document.querySelector('.enviarRegalo');
+
+  enviarRegalo.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    // Crear el fondo oscuro
+    const overlay = document.createElement('div');
+    overlay.classList.add('modal-overlay');
+
+    // Crear el texto dentro del modal
+    const contenido = document.createElement('div');
+    contenido.classList.add('modal-content');
+    contenido.textContent = `Alex Paucar Perez 🎁 28096547118001 BCP¡`;
+
+    // Insertar dentro del overlay
+    overlay.appendChild(contenido);
+
+    // Agregarlo al body
+    document.body.appendChild(overlay);
+
+    // Cerrar modal al hacer clic en cualquier parte del fondo
+    overlay.addEventListener('click', () => {
+      overlay.remove();
+    });
+  });
+
+
+function formatoTiempo(segundos) {
+  const minutos = Math.floor(segundos / 60);
+  const segundosRestantes = Math.floor(segundos % 60);
+  return `${minutos}:${segundosRestantes.toString().padStart(2, '0')}`;
+}
 </script>
 
 </html>
