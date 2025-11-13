@@ -1,0 +1,533 @@
+
+  body {
+      font-family: 'Playfair Display', serif;
+      color: #1a2a5f;
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+   
+    }
+#barrido{
+
+}
+.parrafouno{
+  font-size: 30px;
+  color: #d3b219 ;
+}
+.parrafodos{
+
+}
+.imagenuno{
+  margin-bottom: 50px;
+}
+    /* Fondo azul cielo con movimiento */
+    /* body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: white;
+      animation: movimientoFondo 18s ease infinite;
+      z-index: -3;
+    /* background-image: url('chayomi.jpg'); */
+      /* background-position: center;
+      background-size: contain;
+    } */ *
+
+    /* Textura elegante
+    body::after {
+        
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: white;
+      background-size: cover;
+      opacity: 0.08;
+      z-index: -2;
+    } */
+
+    .fondo-png {
+      background-image: url('primerafoto.jpeg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    /* ===== EFECTOS VISUALES ===== */
+    @keyframes movimientoFondo {
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    /* Brillos dorados */
+    .sparkle {
+      position: fixed;
+      width: 20px;
+      height: 20px;
+  
+      border-radius: 50%;
+      box-shadow: 0 0 8px gold, 0 0 15px #ffda75;
+      animation: sparkleMove 8s linear infinite;
+      z-index: 31;
+
+    }
+
+    @keyframes sparkleMove {
+      0% {
+        transform: translateY(0) translateX(0);
+        opacity: 1;
+      }
+
+      100% {
+        transform: translateY(-100vh) translateX(20px);
+        opacity: 0;
+      }
+    }
+
+    /* Corazones flotantes */
+    .heart {
+      position: fixed;
+      color: rgba(255, 105, 180, 0.25);
+      font-size: 1.5rem;
+      animation: heartFloat 10s linear infinite;
+      z-index: 31;
+    }
+
+
+    /* ===== SECCIONES ===== */
+    section {
+      min-height: 100vh;
+
+      display: flex;
+      padding-top: 0%;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: white;
+      /* border-radius: 30px; */
+      width: 100%;
+      max-width: 800px;
+      margin: 2rem auto;
+      /* box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); */
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Flores suaves */
+    section::before,
+    section::after {
+      content: "❀";
+      position: absolute;
+      font-size: 2rem;
+      color: rgba(26, 42, 95, 0.15);
+    }
+
+    section::before {
+      top: 15px;
+      left: 25px;
+    }
+
+    section::after {
+      bottom: 15px;
+      right: 25px;
+    }
+
+    /* ===== TEXTO Y TÍTULOS ===== */
+    h1,
+    h2 {
+      font-family: 'Great Vibes', cursive;
+      color: #1a2a5f;
+    }
+
+    h3 {
+      font-family: 'Great Vibes', cursive;
+    }
+
+    h1 {
+      font-size: 3.3rem;
+    }
+
+    h2 {
+      font-size: 2.3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    h3 {
+      font-size: 1.5rem;
+      margin-top: 1rem;
+    }
+
+    p {
+      font-size: 1rem;
+      max-width: 600px;
+      line-height: 1.7;
+    }
+
+    button {
+      background-color: #1a2a5f;
+      color: #fff;
+      border: none;
+      padding: 10px 22px;
+      font-size: 1rem;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #2f4cbf;
+      transform: scale(1.05);
+    }
+
+    /* ===== MENÚ ===== */
+    nav {
+      position: fixed;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(8px);
+      border-radius: 30px;
+      padding: 10px 25px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      z-index: 100;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #1a2a5f;
+      font-weight: 600;
+      margin: 0 10px;
+      font-size: 0.95rem;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #2f4cbf;
+    }
+
+    /* ===== GALERÍA ===== */
+    .galeria {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .galeria img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 15px;
+      transition: 0.3s ease;
+    }
+
+    .galeria img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    /* ===== ANIMACIÓN DE ENTRADA ===== */
+    section {
+      opacity: 0;
+      transform: translateY(25px);
+      animation: aparecer 1s forwards;
+    }
+
+    /* #historia {
+      background-image: url('manos.jpeg');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+    } */
+
+    @keyframes aparecer {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* ===== PIE ===== */
+    footer {
+      background-color: rgba(255, 255, 255, 0.85);
+      padding: 1.5rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #1a2a5f;
+      margin-top: 2rem;
+      border-top: 2px solid rgba(26, 42, 95, 0.1);
+    }
+
+    #fonta {
+      font-size: 35px;
+      color: black;
+
+    }
+.diass{
+
+  border-top: #d3b219 2px solid;
+   border-bottom: #d3b219 2px solid;
+
+}
+    #numero {
+      font-size: 4.5rem;
+      font-weight: 100;
+      color: #d3b219;
+    }
+
+    #inicio {
+      position: relative;
+      background-image: url('enai-Photoroom.png');
+      display: flex;
+      justify-content: space-between;
+      background-position: start;
+      background-size: contain;
+      background-repeat: no-repeat;
+      padding-top: 120px;
+      margin: 0;
+      min-width: 100%;
+   
+
+    }
+
+    #alex {
+      color: #1a2a5f;
+      font-family: 'Playfair Display', serif;
+
+    }
+
+    .titulo-alex {
+      font-family: 'Times New Roman', Times, serif;
+    }
+
+    #retroceder {
+    background-color: transparent;
+      color: #d3b219;
+    }
+
+    #play {
+      background-color: #d3b219;
+      color: white;
+      border-radius: 90%;
+      min-height: 50px;
+   box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+    }
+
+    #adelantar {
+     background-color: transparent;
+      color: #d3b219;
+    }
+
+    #solo {
+      width: 90%;
+
+      padding-left: 12px;
+      padding-right: 12px;
+
+    }
+
+    @media screen and (max-width: 480px) {
+
+      #historia {
+        min-height: 80vh;
+        padding-left: 12px;
+        padding-right: 12px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      h1 {
+        font-size: 30px;
+      }
+
+      .ret {
+        width: 70%;
+      }
+
+
+    }
+
+    a {
+      letter-spacing: 6px;
+    }
+
+    .daleplay {
+
+      padding: 0;
+      margin: 0;
+    }
+
+    #parque {
+      display: flex;
+      text-align: center;
+      padding: 0;
+      margin: 0;
+      border-radius: 0;
+    }
+    .textoUnos{
+         font-family: 'Playfair Display', serif;
+      font-style: italic;
+      color: #1b2a59;
+      font-size: 18px;
+    }
+
+    /* //primera imagen de fondo*/
+    #fundillo {
+      background-image: url('BackgroundTemauno.png');
+      min-width: 100%;
+      height: 310px;
+      margin: 0;
+      padding: 0;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+
+    }
+
+    #fundillo2 {
+      background-image: url('Background\ \(7\).png');
+      width: 100%;
+      height: 480px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+   
+
+    }
+
+    #tom {
+      font-family: 'Cormorant Garamont', serif;
+      margin: 0;
+
+    }
+
+    #titulo::after {
+      content: "|";
+      animation: blink 0.7s infinite;
+    }
+
+    #detalles {
+      margin: 0;
+      padding: 0;
+
+    }
+
+    .mur {
+      position: relative;
+      left: 26px;
+    }
+
+    #nmr {
+      color: #d3b219;
+    }
+
+    #rsvp {
+      min-height: 60vh;
+      margin: 0;
+      padding: 0;
+
+    }
+
+    #dr {
+      color: #dbb50b;
+    }
+
+    .textoUno {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      color: #1b2a59;
+    }
+
+    .textoDos {
+      font-size: 2.4rem;
+      margin: 0;
+      font-weight: bold;
+     color: #d3b219;
+    }
+
+    .separator {
+      font-size: 3rem;
+      margin: 10px 0;
+      color: #dbb50b;
+    }
+
+    .textoCuatro {
+      font-size: 1.5rem;
+      font-style: italic;
+      margin-top: 20px;
+
+    }
+    #mostrar {
+      display: flex;
+      justify-content: center;
+      margin-top: 12px;
+      width: 100%;
+    }
+
+    .carrusel-container {
+      position: relative;
+      width: 100%;
+      max-width: 400px;
+      overflow: hidden;
+      border-radius: 10px;
+
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      background: #fff;
+    }
+
+    .carrusel {
+      display: flex;
+      /* background-image: url('intentomimlmillones.jpeg'); */
+      transition: transform 0.6s ease;
+      width: 100%;
+    }
+
+    .slide {
+      min-width: 100%;
+          /* background-image: url('intentomimlmillones.jpeg'); */
+         background-size: cover;
+      box-sizing: border-box;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .slide .contenido {
+      font-size: 1.1em;
+      color: #333;
+    }
+
+    .prev, .next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0,0,0,0.4);
+      color: white;
+      border: none;
+      padding: 10px 14px;
+      cursor: pointer;
+      border-radius: 50%;
+    }
+    .masy{
+
+        margin-top: 18px;
+    }
+
+    .prev:hover, .next:hover {
+      background: rgba(0,0,0,0.6);
+    }
+
+    .prev { left: 10px; }
+    .next { right: 10px; }
