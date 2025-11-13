@@ -271,17 +271,10 @@
       no pueden faltar en nuestra boda?
       ¡Comparte tus favoritas con nosotros! </p>
     <!-- bg-[#1a2a5f] -->
-    <div class="flex flex-row  justify-center items-center mb-6 ">
 
-      <i class=" fa-solid relative mur  fa-wallet text-white text-center pt-4 bg-[#1a2a5f] rounded-full w-12 h-12 "></i>
-
-      <a class=" px-4 pl-6 text-[10px] text-bold py-[12px] text-white bg-[#1a2a5f]  text-center border   rounded-3xl"
-        href="">Click aqui</a>
-
-    </div>
     <form id="formulariodos" class="flex flex-col items-center min-w-full ">
       <label class="pt-6">Nombre de canción</label>
-      <input type="text" id="nameMusic" class="border border-[#d3b219] rounded-lg pl-2 w-64" />
+      <input type="text" id="nameMusic" class="border border-[#d3b219] rounded-lg pl-2 w-64" name="nameMusic"/>
       <button type="submit" class="mt-4 bg-[#2391d4] text-white px-4 py-2 rounded-lg">Guardar</button>
     </form>
 
@@ -512,44 +505,7 @@
 
   });
 
-  const formdos = document.getElementById("formulariodos");
-  const mostrarDos = document.getElementById("mostrardos");
-
-  formdos.addEventListener("submit", async (e) => {
-    e.preventDefault();
-    const datados = {
-      nameMusic: formdos.nameMusic.value.trim(),
-      mensajeMusic: formdos.mensajeMusic.value.trim(),
-      createdAt: serverTimestamp()
-    };
-    await addDoc(collection(db, "canciones"), datados);
-    formdos.reset();
-  });
-
-  onSnapshot(query(collection(db, "canciones"), orderBy("createdAt", "desc")), (snapshot) => {
-    mostrarDos.innerHTML = `
-        <div class="carrusel-container relative overflow-hidden max-w-full max-w-sm mx-auto ">
-          <div class="carrusel flex transition-transform duration-700 "></div>
-          <button class="masy prev absolute left-0 top-1/2  -translate-y-1/2 bg-[#2391d4] text-white px-2 ">‹</button>
-          <button class="masy next absolute right-0 top-1/2 -translate-y-1/2 bg-[#2391d4] text-white px-2">›</button>
-        </div>
-      `;
-    const carruseldos = mostrarDos.querySelector(".carrusel");
-    snapshot.forEach((doc) => {
-      const item = doc.data();
-      const slide = document.createElement("div");
-      slide.classList.add("slide", "min-w-full", "p-4");
-      slide.innerHTML = `<p class="text-[#d3b219] w-full font-semibold">${item.nameMusic}</p>`;
-      carruseldos.appendChild(slide);
-    });
-    let j = 0;
-    const slides = carruseldos.querySelectorAll(".slide");
-    const total = slides.length;
-    const show = (n) => carruseldos.style.transform = `translateX(-${n * 100}%)`;
-    mostrarDos.querySelector(".prev").onclick = () => { j = (j - 1 + total) % total; show(j); };
-    mostrarDos.querySelector(".next").onclick = () => { j = (j + 1) % total; show(j); };
-    setInterval(() => { j = (j + 1) % total; show(j); }, 5000);
-  });
+ 
 
   const enviarRegalo = document.querySelector('.enviarRegalo');
 
@@ -587,6 +543,47 @@
     const segundosRestantes = Math.floor(segundos % 60);
     return `${minutos}:${segundosRestantes.toString().padStart(2, '0')}`;
   }
+
+
+
+   const formdos = document.getElementById("formulariodos");
+  const mostrarDos = document.getElementById("mostrardos");
+
+  formdos.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const datados = {
+      nameMusic: formdos.nameMusic.value.trim(),
+     
+      createdAt: serverTimestamp()
+    };
+    await addDoc(collection(db, "canciones"), datados);
+    formdos.reset();
+  });
+
+  onSnapshot(query(collection(db, "canciones"), orderBy("createdAt", "desc")), (snapshot) => {
+    mostrarDos.innerHTML = `
+        <div class="carrusel-container relative overflow-hidden max-w-full max-w-sm mx-auto ">
+          <div class="carrusel flex transition-transform duration-700 "></div>
+          <button class="masy prev absolute left-0 top-1/2  -translate-y-1/2 bg-[#2391d4] text-white px-2 ">‹</button>
+          <button class="masy next absolute right-0 top-1/2 -translate-y-1/2 bg-[#2391d4] text-white px-2">›</button>
+        </div>
+      `;
+    const carruseldos = mostrarDos.querySelector(".carrusel");
+    snapshot.forEach((doc) => {
+      const item = doc.data();
+      const slide = document.createElement("div");
+      slide.classList.add("slide", "min-w-full", "p-4");
+      slide.innerHTML = `<p class="text-[#d3b219] w-full font-semibold">${item.nameMusic}</p>`;
+      carruseldos.appendChild(slide);
+    });
+    let j = 0;
+    const slides = carruseldos.querySelectorAll(".slide");
+    const total = slides.length;
+    const show = (n) => carruseldos.style.transform = `translateX(-${n * 100}%)`;
+    mostrarDos.querySelector(".prev").onclick = () => { j = (j - 1 + total) % total; show(j); };
+    mostrarDos.querySelector(".next").onclick = () => { j = (j + 1) % total; show(j); };
+    setInterval(() => { j = (j + 1) % total; show(j); }, 5000);
+  });
 </script>
 
 </html>
