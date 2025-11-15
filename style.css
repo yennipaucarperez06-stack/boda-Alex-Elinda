@@ -392,7 +392,13 @@ margin-bottom: 100px;
       padding-right: 12px;
 
     }
-
+    @media screen and (min-width: 400px) {
+      body{
+       background-color: #81b3ce;
+        margin-left: 400px;
+         margin-right: 400px;
+      }
+    }
     @media screen and (max-width: 480px) {
 
       #historia {
