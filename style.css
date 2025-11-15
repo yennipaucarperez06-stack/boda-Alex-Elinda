@@ -13,6 +13,9 @@
   font-size: 25px;
   color: #1a2a5f ;
 }
+.erdftrr{
+  font-size: 32px ;
+}
 .parrafodos{
 
 }
@@ -271,8 +274,12 @@
     }
 
     #fonta {
+      position: relative;
+     
       font-size: 35px;
       color: black;
+    border-bottom:solid 1px  #d3b219;
+      border-top:solid 1px #d3b219;
 
     }
     /* Fondo oscuro */
@@ -313,10 +320,13 @@
   font-size: 18px;
 }
 .diass{
+color: #000;
+margin-bottom: 100px;
+  
 
-  border-top: #d3b219 2px solid;
-   border-bottom: #d3b219 2px solid;
-
+}
+.border-t{
+  color: #d3b219;
 }
 .diasu{
   font-size: 22px;
@@ -354,11 +364,11 @@
 
     #retroceder {
     background-color: transparent;
-      color: #d3b219;
+      color: #1a2a5f;
     }
 
     #play {
-      background-color: #d3b219;
+      background-color: #1a2a5f;
       color: white;
       border-radius: 90%;
       min-height: 50px;
@@ -367,12 +377,17 @@
 
     #adelantar {
      background-color: transparent;
-      color: #d3b219;
+      color: #1a2a5f;
     }
+.bootom{
+ position: relative;
+ top: 20px;
 
+  padding: 0;
+}
     #solo {
       width: 90%;
-
+     
       padding-left: 12px;
       padding-right: 12px;
 
@@ -471,9 +486,14 @@
     }
 
     #nmr {
-      color: #d3b219;
+      font-size: 30px;
+      color: #1a2a5f;
+  
     }
-
+.eryr{
+  position: relative;
+  bottom: 20px;
+}
     #rsvp {
       min-height: 60vh;
       margin: 0;
@@ -555,7 +575,7 @@
       /* background-image: url('intentomimlmillones.jpeg'); */
       transition: transform 0.6s ease;
       width: 100%;
-            background-image: url('primeracarrusel.jpeg');
+   
       background-size: contain;
       background-position: center;
   
@@ -582,7 +602,7 @@
 } */
     .slide {
       min-width: 100%;
-                background-image: url('primeracarrusel.jpeg');
+
       background-size: contain;
       background-position: center;
   
