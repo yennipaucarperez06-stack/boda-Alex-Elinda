@@ -98,13 +98,13 @@
     }
 
     /* Corazones flotantes */
-    .heart {
+    /* .heart {
       position: fixed;
       color: rgba(255, 105, 180, 0.25);
       font-size: 1.5rem;
       animation: heartFloat 10s linear infinite;
       z-index: 31;
-    }
+    } */
 
 
     /* ===== SECCIONES ===== */
@@ -338,7 +338,7 @@ margin-bottom: 100px;
     #numero {
       font-size: 4.5rem;
       font-weight: 100;
-      color: #d3b219;
+      color: #1a2a5f;
     }
 
     #inicio {
@@ -401,11 +401,12 @@ margin-bottom: 100px;
 .bootom{
  position: relative;
  top: 20px;
-
+ color: #d3b219;
   padding: 0;
 }
 .erewwwq{
   font-size: 32px;
+  color: #d3b219;
 }
 .wdssd{
    font-family: 'Playfair Display', serif;
