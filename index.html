@@ -2,573 +2,282 @@
 <html lang="es">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Invitación de Boda 💍 Alex & Elinda</title>
-  <!-- HEAD -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600&display=swap"
-    rel="stylesheet">
-  <!-- Fuentes elegantes -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Nos Casamos! - Alex & Elinda</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+        body {
+            font-family: 'Playfair Display', serif;
+            background: linear-gradient(135deg, #f5f5dc 0%, #e8e8d0 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600&display=swap"
-    rel="stylesheet">
+        .container {
+            text-align: center;
+            max-width: 500px;
+            width: 90%;
+            animation: fadeIn 1s ease-in;
+        }
 
-  <link rel="stylesheet" href="style.css">
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .header-image {
+            position: relative;
+            width: 100%;
+            height: 280px;
+            background-image: url('enai-Photoroom.png');
+            background-size: cover;
+            background-position: center;
+            border-radius: 15px 15px 0 0;
+            margin-bottom: -5px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .overlay-text {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 15px 15px 0 0;
+            color: white;
+            padding: 20px;
+        }
+
+        .title {
+            font-size: 1.2rem;
+            font-weight: 400;
+            letter-spacing: 3px;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .names {
+            font-family: 'Great Vibes', cursive;
+            font-size: 4rem;
+            line-height: 1.2;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.6);
+        }
+
+        .separator {
+            font-size: 2.5rem;
+            margin: -10px 0;
+            color: #d3b219;
+        }
+
+        .envelope-container {
+            background: white;
+            border-radius: 0 0 15px 15px;
+            padding: 40px 30px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+            position: relative;
+            transition: all 0.5s ease;
+        }
+
+        .envelope-container.opening {
+            transform: scale(1.05);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+        }
+
+        .envelope {
+            position: relative;
+            width: 250px;
+            height: 180px;
+            margin: 0 auto 25px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            background-image: url('portadacarta.jpg');
+            background-size: cover;
+            background-position: center;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .envelope:hover {
+            transform: translateY(-8px);
+        }
+
+        /* Ocultar elementos del sobre CSS */
+        .envelope-back,
+        .envelope-flap,
+        .seal {
+            display: none;
+        }
+
+        .instructions {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: #1a2a5f;
+            margin-bottom: 25px;
+            letter-spacing: 1px;
+        }
+
+        .invitation-button {
+            background: linear-gradient(135deg, #d3b219 0%, #f4d03f 100%);
+            color: white;
+            border: none;
+            padding: 15px 50px;
+            font-size: 1.2rem;
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 8px 25px rgba(211, 178, 25, 0.4);
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .invitation-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(211, 178, 25, 0.6);
+            background: linear-gradient(135deg, #f4d03f 0%, #d3b219 100%);
+        }
+
+        .invitation-button:active {
+            transform: translateY(-1px);
+        }
+
+        /* Animación de salida */
+        @keyframes slideUp {
+            to {
+                transform: translateY(-100vh);
+                opacity: 0;
+            }
+        }
+
+        .container.exiting {
+            animation: slideUp 0.8s ease-in forwards;
+        }
+
+        /* Efecto de confeti */
+        .confetti {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            background: #d3b219;
+            opacity: 0;
+            animation: confettiFall 3s linear;
+        }
+
+        @keyframes confettiFall {
+            0% {
+                opacity: 1;
+                transform: translateY(0) rotate(0deg);
+            }
+
+            100% {
+                opacity: 0;
+                transform: translateY(100vh) rotate(720deg);
+            }
+        }
+    </style>
 </head>
 
-<body class="justify-center ">
-
-  <!-- MENÚ -->
-
-
-  <!-- EFECTOS FLOTANTES -->
-  <span class="sparkle" style="top:90%; left:10%; animation-delay:0s;"></span>
-  <span class="sparkle" style="top:80%; left:70%; animation-delay:2s;"></span>
-  <span class="sparkle" style="top:60%; left:40%; animation-delay:4s;"></span>
-
-
-
-  <!-- INICIO -->
-  <section id="inicio" class="flex  w-full  justify-center ">
-
-    <div class="ret flex flex-col text-center ">
-      <h3 id="" class=" textoUns  mt-6">¡Nos Casamos!</h3>
-
-      <h2 id="" class="pr-[164px] titulo-alex   text-[#1a2a5f]">Alex</h2>
-
-      <h1 id="" class=" titulo-alex separator ">&</h1>
-      <h2 id="" class="pl-[10rem] titulo-alex ">Elinda</h2>
-    </div>
-    </div>
-
-    </div>
-    <div class="flex-col  justify-center  flex items-center gap-4 bg-transparent py-2 ">
-      <div class="daleplay">
-        <h3 class="textoUnos">Dale play y escucha nuestra cancion</h3>
-      </div>
-      <div id="" class="flex items-center gap-3 w-64">
-        <span id="tiempo-actual" class="text-sm text-gray-700">0:00</span>
-        <input type="range" id="barra-progreso" class="w-full accent-[#2391d4]" value="0" min="0" max="100">
-        <span id="tiempo-total" class="text-sm text-gray-700">0:00</span>
-      </div>
-      <div class="mb-10">
-        <button id="retroceder" class="text-2xl hover:scale-110 transition ">⏮</button>
-        <button id="play" class="text-3xl hover:scale-110 transition">▶</button>
-        <button id="adelantar" class="text-2xl hover:scale-110 transition">⏭</button>
-        <audio id="musica-fondo" src="Promesa.mp3" preload="metadata" loop autoplay></audio>
-      </div>
-    </div>
-    </div>
-    <div id="fundillo" class="bg-transparent ">
-
-    </div>
-
-  </section>
-
-  </section>
-  <section id="barrido" class="bg-transparent flex justify-start text-center ">
-
-    <div>
-      <h3 id="barrido" class="px-4 bg-transparent  parrafouno">
-        El Amor Nunca se da por vencido , jamás pierde la fe ,
-        siempre tiene esperanzas y se mantiene firme en toda
-        circunstancia.
-      </h3>
-      <h3 class="text-[#dbb50b]">
-        1 Corintios 13:7
-      </h3>
-
-      <img class="w-24 m-auto imagenuno" src="cart-Photoroom.png" alt="">
-
-      <h3 class="w-67 m-auto h-auto text-[#d3b219] parrafodos">
-        <strong>
-          Con la bendicion de Dios
-          y Nuestros queridos padres
-        </strong>
-      </h3>
-      <strong class="text-black">Padres del Novio</strong>
-      <p>Rusenbel Paucar Perez</p>
-      <p>Dina Perez Falcón</p>
-      <strong class="text-black">Padres de la Novia</strong>
-      <p>Rafael Yalico Malpartida</p>
-      <p>Mercedes Ramos Vilca</p>
-      <h3 class="w-67 m-auto text-[#d3b219]">
-        <strong> Con la Compañia de Nuestros Testigos</strong>
-      </h3>
-      <strong class="text-black">Testigos de Religioso</strong>
-      <p>Daniel William Espinoza Alvarez</p>
-      <p>Patricia Suarez Rugel</p>
-      <strong class="text-black">Testigos de Civil</strong>
-      <p>Alfredo Lopez Olivera</p>
-      <p>Norma Rentera Campos</p>
-    </div>
-  </section>
-  <!-- DETALLES -->
-
-  <div id="barrido" class="pb-12 pt-4 ">
-    <img id="barrido" src="Ultimafoto.png" class="bg-transparent" alt="">
-  </div>
-  <div class="w-full flex  justify-center text-center">
-    <img src="anillo.png" alt="" class="w-20">
-  </div>
-  <section id="detalles" class="min-w-full">
-    <h2 id="nmr" class="w-90  ">Tenemos el Agrado de invitarlos a Nuestra Boda</h2>
-    <div class="flex text-black">
-      <div class="gap-3 text-center eryr  flex justify-start items-center">
-        <h1 id="fonta" class=" border-t border-b border-[d3b219] text-3xl   text-[#2391d4]">Enero</h1>
-        <h1 id="numero" class="font-bold text-[#1a2a5f]">17</h1>
-        <h1 id="fonta" class="border-t border-b border-gray-400 text-3xl  text-[#2391d4]">2026</h1>
-      </div>
-    </div>
-    <div id="solo" class="mt-12  min-w-full flex  justify-center ">
-      <div class=" justify-center ">
-        <h2 class="w-90 bootom ">Faltan...
-        </h2>
-        <div class="contenedor-caja     flex justify-center ">
-          <div class="flex flex-col py-2 flex px-2 text-[#d3b219] text-xl diass">
-            <div class="contenedor-uno text-3xl">
+<body>
+    <div class="container" id="container">
+        <div class="header-image">
+            <div class="overlay-text">
+                <div class="title">¡NOS CASAMOS!</div>
+                <div class="names">
+                    Alex
+                    <div class="separator">&</div>
+                    Elinda
+                </div>
             </div>
-            <div class="">
-              <h3 class="diasu">Dias</h3>
-            </div>
-          </div>
-
-          <div class="text-[2rem] text-[#000]">:</div>
-          <div class="flex flex-col py-2 flex px-2 text-[#d3b219] text-xl diass">
-            <div class="contenedor-dos text-3xl ">
-            </div>
-            <div>
-              <h3 class="diasu">Horas</h3>
-            </div>
-          </div>
-          <div class="text-[2rem] text-[#000]">:</div>
-          <div class="flex flex-col py-2 flex px-2 text-[#d3b219] text-xl diass">
-            <div class="contenedor-tres text-3xl">
-            </div>
-            <div>
-              <h3 class="diasu">Minutos</h3>
-            </div>
-          </div>
-          <div class="text-[2rem] text-[#000]">:</div>
-          <div class="flex flex-col py-2 flex px-2 text-[#1a2a5f] text-xl diass">
-            <div class="contenedor-cuatro text-3xl">
-            </div>
-            <div>
-              <h3 class="diasu">Segundos</h3>
-            </div>
-          </div>
         </div>
-        <i class="fa-solid fa-church text-6xl text-[#1a2a5f] hover:text-red-700 transition-all mb-2"></i>
 
-      </div>
+        <div class="envelope-container" id="envelope-container">
+            <div class="envelope" id="envelope">
+                <div class="envelope-back"></div>
+                <div class="envelope-flap"></div>
+                <div class="seal"></div>
+            </div>
+
+            <p class="instructions">Click para abrir invitación</p>
+            <p class="subtitle">Hemos reservado para ti</p>
+
+            <button class="invitation-button" id="openButton">1 PASE</button>
+        </div>
     </div>
 
-    <h3 class="leading-[28px] ">
-      <h2 class="px-6 erewwwq">Ceremonia Civil </h2>
-      Fundo Piamonte - Huánuco
-    </h3>
-    <div class=" px-2 mb-6">
-      <!-- Mapa de Google -->
-      <h3>
+    <script>
+        const envelope = document.getElementById('envelope');
+        const openButton = document.getElementById('openButton');
+        const container = document.getElementById('container');
+        const envelopeContainer = document.getElementById('envelope-container');
 
-        </p>
+        function createConfetti() {
+            for (let i = 0; i < 50; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.style.left = Math.random() * 100 + '%';
+                confetti.style.background = ['#d3b219', '#1a2a5f', '#f4d03f'][Math.floor(Math.random() * 3)];
+                confetti.style.animationDelay = Math.random() * 0.5 + 's';
+                document.body.appendChild(confetti);
 
-    </div>
-    <h2 class="px-6 erewww">Ceremonia Religiosa y Recepción</h2>
-    <p> Fundo Piamonte </p> <br>
-    <p> La Unión Km 6 Pucuchinche - Huánuco </p>
+                setTimeout(() => confetti.remove(), 3000);
+            }
+        }
 
+        function openEnvelope() {
+            // Abrir sobre
+            envelope.classList.add('open');
+            envelopeContainer.classList.add('opening');
 
-    <div class="mt-12 mb-12 ">
-      <a href="https://maps.app.goo.gl/saqGCg3Lt9Zhjaw86" target="_blank"
-        class="bg-[#1a2a5f] wdssd  text-white px-5 py-2 rounded-full shadow hover:bg-[#1e7dbf] transition">
-        Ver ubicacion
-      </a>
-    </div>
-    <div id="fundillo2" class="bg-transparent ">
+            // Crear confeti
+            createConfetti();
 
-    </div>
-    <h2 class="colordres">Dres code </h2>
-    <p>Elegante</p>
-    <div class="w-18 ">
-      <img id="" src="uniforme-Photoroom.png" alt="">
+            // Esperar animación y redirigir
+            setTimeout(() => {
+                container.classList.add('exiting');
 
-    </div>
-    <p>Preparese para un boda llena de colores, <br>
-      el blanco está reservado para la novia
-    </p>
-    <br>
-    <br>
+                setTimeout(() => {
+                    window.location.href = 'invitacion.html';
+                }, 800);
+            }, 1200);
+        }
 
-    <i class="mb-2 fa-solid fa-gift text-6xl text-[#d3b219] hover:text-red-700 transition-all"></i>
+        // Click en el sobre
+        envelope.addEventListener('click', openEnvelope);
 
-    <h2> Regalo</h2>
-    <p class="px-12">
-      El mejor regalo es compartir
-      este día tan esperando con ustedes,
-      Pero si desean obsequiarnos algo especial, Lo
-      recibiremos con el corazón agradecido, como
-      una bendición más en nuestro camino.
-    </p>
-
-    <!-- bg-[#1a2a5f] -->
-    <div class="flex flex-row  justify-center items-center mb-6 mt-10">
-
-      <!-- <i class=" fa-solid relative mur  fa-wallet text-white text-center pt-4 bg-[#1a2a5f] rounded-full w-12 h-12 "></i> -->
-
-      <!-- <a class=" px-4 pl-6 text-[10px] text-bold py-[12px] text-white bg-[#1a2a5f]  text-center border   rounded-3xl"
-        href="">Click aqui</a> -->
-      <button class="enviarRegalo">Enviar Regalo</button>
-
-    </div>
-    <br>
-    <br class="">
-    <i class=" fa-solid fa-envelope text-6xl text-[#d3b219]  relative">
-      <i class="fa-solid fa-heart text-[#d3b219] text-2xl absolute -top-1 -right-2"></i>
-    </i>
-
-    <h2> Buzon de deseos </h2>
-    <p class="px-12">Nos encantaría leer
-      tus buenos deseos. ¡Déjanos un
-      mensaje que recordaremos por siempre! </p>
-    <!-- bg-[#1a2a5f] -->
-    <div class="">
-      <form action="" class="flex flex-col " id="formulario">
-        <input type="text" class="border border-[#d3b219] rounded-lg pl-2 inputdos" placeholder="Nombre..." id="nombre">
-
-        <textarea placeholder="Mensaje..." rows="4" cols="30" name="" id="mensaje"
-          class=" border rounded-lg  border-[#d3b219] pl-2 mt-6 inputTextarea"></textarea>
-        <button type="submit" class="mt-6 mb-2">Guardar</button>
-      </form>
-
-    </div>
-    <div id="mostrar" class=""></div>
-    <!-- <div class="flex flex-row  justify-center items-center mb-6 mt-10">
-
-      <i class=" fa-solid relative mur  fa-wallet text-white text-center pt-4 bg-[#1a2a5f] rounded-full w-12 h-12 "></i>
-
-      <a class=" px-4 pl-6 text-[10px] text-bold py-[12px] text-white bg-[#1a2a5f]  text-center border   rounded-3xl"
-        href="">Click aqui</a>
-
-    </div> -->
-
-
-    <div id="mostrardos" class="  w-full min-h-12"></div>
-    <div id="barrido" class=" w-full  ">
-      <img id="barrido" class="min-w-full h-full bg-transparent" src="Background (10).png" alt="">
-    </div>
-  </section>
-
-  <!-- RSVP -->
-  <section id="rsvp" class="bg-transparent">
-    <h2 id="dr" class="">Confirmar Asistencia</h2>
-    <p class="mb-6 ">
-      Tu presencia es muy importante para nosotros,
-      Por favor confírmanos tu asistencia hasta el 01 de
-      Enero.
-    </p>
-
-    <button onclick="window.location.href='https://forms.gle/qyGwQZUTsXaFLL7C9'">
-      Confirmar
-    </button>
-
-    <div class=" mt-6 p-0">
-      <img src="InicialesAyE.png" class="w-78  m-0 p-0" alt="">
-    </div>
-  </section>
-
-  <footer id="" class="bg-transparent">
-    <h4 class="bg-transparent"> Dos almas un mismo proposito en Dios con amor Alex y Elinda <h4>
-        <h3 class="text-xl text-3xl">17 de Enero de 2026 💍</h3>
-        </p>
-  </footer>
-
+        // Click en el botón
+        openButton.addEventListener('click', openEnvelope);
+    </script>
 </body>
-<script type="module">
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-app.js";
-
-  import {
-    getFirestore,
-    collection,
-    addDoc,
-    serverTimestamp,
-    query,
-    where,
-    getDocs,
-    orderBy,
-    onSnapshot
-  } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-firestore.js";
-
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
-
-  // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-  const firebaseConfig = {
-    apiKey: "AIzaSyC65iEfPFGHEpu1Knqi7Qx4deF7G-eHmJA",
-    authDomain: "deseos-80d43.firebaseapp.com",
-    projectId: "deseos-80d43",
-    storageBucket: "deseos-80d43.firebasestorage.app",
-    messagingSenderId: "168948508828",
-    appId: "1:168948508828:web:34d4fb432f12030ad1e559",
-    measurementId: "G-TLQ32QN0XE"
-  };
-
-
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  const db = getFirestore(app);
-
-
-  let contenedorPadre = document.querySelector('.contenedor-caja');
-  let contenedoruno = document.querySelector('.contenedor-uno');
-  let contenedordos = document.querySelector('.contenedor-dos');
-  let contenedortres = document.querySelector('.contenedor-tres');
-  let contenedorcuatro = document.querySelector('.contenedor-cuatro');
-
-  // Fecha objetivo → 11 de enero del próximo año
-  const fechaObjetivo = new Date(`Jan 17, ${new Date().getFullYear() + 1} 00:00:00`).getTime();
-
-  const intervalo = setInterval(() => {
-    const ahora = new Date().getTime();
-    const distancia = fechaObjetivo - ahora;
-
-    const dias = Math.floor(distancia / (1000 * 60 * 60 * 24));
-    const horas = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutos = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
-    const segundos = Math.floor((distancia % (1000 * 60)) / 1000);
-
-    // const titulo = document.createElement('h1');
-    // titulo.textContent = dias;
-    // contenedoruno.appendChild(titulo)
-    contenedoruno.textContent = dias;
-    contenedordos.textContent = horas;
-    contenedortres.textContent = minutos;
-    contenedorcuatro.textContent = segundos;
-
-    if (distancia < 0) {
-      clearInterval(intervalo);
-      contenedorPadre.textContent = "¡Feliz 11 de enero! 🎉";
-    }
-  }, 1000);
-  const audio = document.getElementById('musica-fondo');
-  const btnPlay = document.getElementById('play');
-  const btnAdelantar = document.getElementById('adelantar');
-  const btnRetroceder = document.getElementById('retroceder');
-  const barra = document.getElementById('barra-progreso');
-  const tiempoActual = document.getElementById('tiempo-actual');
-  const tiempoTotal = document.getElementById('tiempo-total');
-  let reproduciendo = false;
-
-  // ▶️ Play / Pausa
-
-  btnPlay.addEventListener('click', () => {
-    if (!reproduciendo) {
-      audio.play();
-      reproduciendo = true;
-      btnPlay.textContent = '⏸';
-    } else {
-      audio.pause();
-      reproduciendo = false;
-      btnPlay.textContent = '▶';
-    }
-  });
-  // 🔊 Reproducir automáticamente al cargar
-  window.addEventListener('load', () => {
-    audio.play().then(() => {
-      reproduciendo = true;
-      btnPlay.textContent = '⏸';
-    }).catch((error) => {
-      console.warn('El navegor bloqueo la reproduccion')
-    })
-  })
-  // ⏭️ Adelantar 10 segundos
-  btnAdelantar.addEventListener('click', () => {
-    audio.currentTime += 10;
-  });
-
-  // ⏮️ Retroceder 10 segundos
-  btnRetroceder.addEventListener('click', () => {
-    audio.currentTime -= 10;
-  });
-
-  // 🎚️ Actualizar barra y tiempo actual
-  audio.addEventListener('timeupdate', () => {
-    barra.value = (audio.currentTime / audio.duration) * 100;
-    tiempoActual.textContent = formatoTiempo(audio.currentTime);
-  });
-
-  // ⏱️ Mostrar duración total cuando cargue
-  audio.addEventListener('loadedmetadata', () => {
-    tiempoTotal.textContent = formatoTiempo(audio.duration);
-  });
-
-  // ⏩ Permitir mover la barra manualmente
-  barra.addEventListener('input', () => {
-    audio.currentTime = (barra.value / 100) * audio.duration;
-  });
-
-  const form = document.getElementById('formulario');
-  const mostrarDiv = document.getElementById('mostrar');
-
-  // 4️⃣ Guardar datos al enviar formulario
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-
-    const data = {
-      nombre: form.nombre.value.trim(),
-      mensaje: form.mensaje.value.trim(),
-      createdAt: serverTimestamp()
-    };
-
-    try {
-      await addDoc(collection(db, "deseos"), data);
-      form.reset();
-    } catch (err) {
-      console.error(err);
-      alert("Error: " + err.message);
-    }
-  });
-
-  // 5️⃣ Escuchar los datos guardados en tiempo real y mostrarlos
-  const q = query(collection(db, "deseos"), orderBy("createdAt", "desc"));
-  onSnapshot(q, (snapshot) => {
-    mostrarDiv.innerHTML = `
-        <div class="carrusel-container ">
-          <div class="carrusel"></div>
-          <button class="prev">&#10094;</button>
-          <button class="next">&#10095;</button>
-        </div>
-      `;
-
-    const carrusel = mostrarDiv.querySelector(".carrusel");
-
-    snapshot.forEach((doc) => {
-      const item = doc.data();
-      const slide = document.createElement("div");
-      slide.classList.add("slide");
-      slide.innerHTML = `
-          <div class="contenido ">
-            <h3><strongv class="text-[#d3b219] font-bold text-[25px]">${item.nombre}</strong></h3>
-            <p class="">${item.mensaje}</p>
-          </div>
-        `;
-      carrusel.appendChild(slide);
-    });
-
-    let currentIndex = 0;
-    const slides = carrusel.querySelectorAll(".slide");
-    const total = slides.length;
-
-    const showSlide = (index) => {
-      carrusel.style.transform = `translateX(-${index * 100}%)`;
-    };
-
-    mostrarDiv.querySelector(".prev").addEventListener("click", () => {
-      currentIndex = (currentIndex - 1 + total) % total;
-      showSlide(currentIndex);
-    });
-
-    mostrarDiv.querySelector(".next").addEventListener("click", () => {
-      currentIndex = (currentIndex + 1) % total;
-      showSlide(currentIndex);
-    });
-
-    // Carrusel automático cada 5 segundos
-    setInterval(() => {
-      currentIndex = (currentIndex + 1) % total;
-      showSlide(currentIndex);
-    }, 5000);
-
-
-  });
-
-
-
-  const enviarRegalo = document.querySelector('.enviarRegalo');
-
-  enviarRegalo.addEventListener('click', (e) => {
-    e.preventDefault();
-
-    // Crear el fondo oscuro
-    const overlay = document.createElement('div');
-    overlay.classList.add('modal-overlay');
-
-    // Crear el texto dentro del modal
-    const contenido = document.createElement('div');
-    contenido.classList.add('modal-content');
-    contenido.innerHTML = `<p class="text-[#d3b219] bg-white text-center regalos">
-      BCP : 28096547118001 <br>
-      CCI : 00228019654711800161 <br>
-      Yape : 991884541 <br>
-      Alex Paucar Perez  🎁 <br>
-      Yape : 913345462 <br>
-      Elinda Yalico Ramos  🎁 </p>`;
-
-    // Insertar dentro del overlay
-    overlay.appendChild(contenido);
-
-    // Agregarlo al body
-    document.body.appendChild(overlay);
-
-    // Cerrar modal al hacer clic en cualquier parte del fondo
-    overlay.addEventListener('click', () => {
-      overlay.remove();
-    });
-  });
-
-
-  function formatoTiempo(segundos) {
-    const minutos = Math.floor(segundos / 60);
-    const segundosRestantes = Math.floor(segundos % 60);
-    return `${minutos}:${segundosRestantes.toString().padStart(2, '0')}`;
-  }
-
-
-
-  const formdos = document.getElementById("formulariodos");
-  const mostrarDos = document.getElementById("mostrardos");
-
-  formdos.addEventListener("submit", async (e) => {
-    e.preventDefault();
-    const datados = {
-      nameMusic: formdos.nameMusic.value.trim(),
-
-      createdAt: serverTimestamp()
-    };
-    await addDoc(collection(db, "canciones"), datados);
-    formdos.reset();
-  });
-
-  onSnapshot(query(collection(db, "canciones"), orderBy("createdAt", "desc")), (snapshot) => {
-    mostrarDos.innerHTML = `
-        <div class="carrusel-container relative overflow-hidden  mx-auto ">
-          <div class="carrusel flex transition-transform duration-700 "></div>
-          <button class="masy prev absolute left-0 top-1/2  -translate-y-1/2 bg-[#2391d4] text-white px-2 ">‹</button>
-          <button class="masy next absolute right-0 top-1/2 -translate-y-1/2 bg-[#2391d4] text-white px-2">›</button>
-        </div>
-      `;
-    const carruseldos = mostrarDos.querySelector(".carrusel");
-    snapshot.forEach((doc) => {
-      const item = doc.data();
-      const slide = document.createElement("div");
-      slide.classList.add("slide", "min-w-full", "p-4");
-      slide.innerHTML = `<p class="text-[#002147] w-full font-semibold">${item.nameMusic}</p>`;
-      carruseldos.appendChild(slide);
-    });
-    let j = 0;
-    const slides = carruseldos.querySelectorAll(".slide");
-    const total = slides.length;
-    const show = (n) => carruseldos.style.transform = `translateX(-${n * 100}%)`;
-    mostrarDos.querySelector(".prev").onclick = () => { j = (j - 1 + total) % total; show(j); };
-    mostrarDos.querySelector(".next").onclick = () => { j = (j + 1) % total; show(j); };
-    setInterval(() => { j = (j + 1) % total; show(j); }, 20000);
-  });
-</script>
 
 </html>
