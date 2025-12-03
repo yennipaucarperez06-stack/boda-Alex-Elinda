@@ -108,27 +108,101 @@
 
         .envelope {
             position: relative;
-            width: 250px;
-            height: 180px;
+            width: 200px;
+            height: 140px;
             margin: 0 auto 25px;
             cursor: pointer;
             transition: transform 0.3s ease;
-            background-image: url('portadacarta.jpg');
-            background-size: cover;
-            background-position: center;
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
 
         .envelope:hover {
             transform: translateY(-8px);
         }
 
-        /* Ocultar elementos del sobre CSS */
-        .envelope-back,
-        .envelope-flap,
+        .envelope-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, #f5f5dc 0%, #e8e8d0 100%);
+            border-radius: 0 0 10px 10px;
+        }
+
+        .envelope-back::before,
+        .envelope-back::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            width: 0;
+            height: 0;
+            border-style: solid;
+        }
+
+        .envelope-back::before {
+            left: 0;
+            border-width: 0 0 140px 100px;
+            border-color: transparent transparent transparent #d4d4bc;
+        }
+
+        .envelope-back::after {
+            right: 0;
+            border-width: 0 100px 140px 0;
+            border-color: transparent #d4d4bc transparent transparent;
+        }
+
+        .envelope-flap {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            background: linear-gradient(to bottom, #e8e8d0 0%, #d4d4bc 100%);
+            clip-path: polygon(0 0, 50% 50%, 100% 0);
+            z-index: 2;
+            transform-origin: top center;
+            transition: transform 1s cubic-bezier(0.4, 0.0, 0.2, 1);
+        }
+
+        .envelope.open .envelope-flap {
+            transform: rotateX(-180deg);
+        }
+
         .seal {
-            display: none;
+            position: absolute;
+            top: 35px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 40px;
+            background: radial-gradient(circle, #f4d03f 0%, #d3b219 100%);
+            border-radius: 50%;
+            border: 3px solid #b8960f;
+            box-shadow: 0 4px 12px rgba(211, 178, 25, 0.6);
+            z-index: 3;
+            animation: sealGlow 2s ease-in-out infinite;
+        }
+
+        @keyframes sealGlow {
+
+            0%,
+            100% {
+                box-shadow: 0 4px 12px rgba(211, 178, 25, 0.6);
+            }
+
+            50% {
+                box-shadow: 0 4px 20px rgba(211, 178, 25, 0.9);
+            }
+        }
+
+        .seal::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 20px;
+            height: 20px;
+            background: #b8960f;
+            border-radius: 50%;
         }
 
         .instructions {
@@ -267,7 +341,7 @@
                 container.classList.add('exiting');
 
                 setTimeout(() => {
-                    window.location.href = 'invitacion.html';
+                    window.location.href = 'index.html';
                 }, 800);
             }, 1200);
         }

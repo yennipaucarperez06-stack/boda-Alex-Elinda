@@ -567,7 +567,7 @@
     const show = (n) => carruseldos.style.transform = `translateX(-${n * 100}%)`;
     mostrarDos.querySelector(".prev").onclick = () => { j = (j - 1 + total) % total; show(j); };
     mostrarDos.querySelector(".next").onclick = () => { j = (j + 1) % total; show(j); };
-    setInterval(() => { j = (j + 1) % total; show(j); }, 20000);
+    setInterval(() => { j = (j + 1) % total; show(j); }, 5000);
   });
 </script>
 
