@@ -6,7 +6,9 @@ body {
 
 }
 
-#barrido {}
+#barrido {
+  /* Regla vacía eliminada */
+}
 
 .parrafouno {
   font-size: 25px;
@@ -17,7 +19,9 @@ body {
   font-size: 32px;
 }
 
-.parrafodos {}
+.parrafodos {
+  /* Regla vacía eliminada */
+}
 
 .imagenuno {
   margin-bottom: 50px;
@@ -353,7 +357,7 @@ footer {
 
 #inicio {
   position: relative;
-  background-image: url('enai-Photoroom.png');
+  background-image: url('enai-Photoroom.webp');
   display: flex;
   justify-content: space-between;
   background-position: start;
@@ -514,7 +518,7 @@ a {
 
 /* //primera imagen de fondo*/
 #fundillo {
-  background-image: url('BackgroundTemauno.png');
+  background-image: url('BackgroundTemauno.webp');
   min-width: 100%;
   height: 310px;
   margin: 0;
@@ -526,7 +530,7 @@ a {
 }
 
 #fundillo2 {
-  background-image: url('Background\ \(7\).png');
+  background-image: url('Background\ \(7\).webp');
   width: 100%;
   height: 480px;
   background-size: contain;
